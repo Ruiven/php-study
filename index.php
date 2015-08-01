@@ -1,5 +1,18 @@
-<html>
+
+<?php
+require_once __DIR__.'/lib/Medoo.php';
+
+
+$database_config = require __DIR__.'/config/database.php';
+$medoo = @new Medoo($database_config);
+$medoo->query('set names utf8');
+
+$count = $medoo->count('guestInfo', ['id[>]'=>0]);
+
+?>
+
  <head>
+
   <meta charset="utf-8">
 <style type="text/css">
  h1{
@@ -43,5 +56,10 @@
 	 <p>姓名: <input type="text" name="name" /></p>
 	 <p>邮箱: <input type="text" name="mail" /></p>
 	 <p><input type="submit" value="提交"/></p>
+
+   <p><?php echo "现在已经有" .$count. "位小伙伴加入了我们！"; ?></p>
+
+
+
 	</form> </body>
-</html>
+
