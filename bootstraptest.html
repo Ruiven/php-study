@@ -8,7 +8,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="icon.png">
 
     <title>甜面-TianMian</title>
 
@@ -23,9 +23,44 @@
       <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    
+
   </head>
 
-  <body style="background-image:url('http://ak-hdl.buzzfed.com/static/2015-08/3/8/enhanced/webdr07/original-13376-1438603402-4.png');">
+  <body>
+
+    <script type="text/javascript">
+  
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+  
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+  
+    // use this to pull the images in the order they appear in the markup
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+  
+    // uncomment the 3 lines below to pull the images in random order
+  
+    // var $sibs  = $active.siblings();
+    // var rndNum = Math.floor(Math.random() * $sibs.length );
+    // var $next  = $( $sibs[ rndNum ] );
+  
+    $active.addClass('last-active');
+  
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+    }
+  
+
+    setInterval( "slideSwitch()", 5000 );
+
+  
+</script>
 
 
 
@@ -42,42 +77,82 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-
+            <li class="active"><a href="#">主页</a></li>
+          
 
             <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               Java 
-               <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-               <li><a href="#">jmeter</a></li>
-               <li><a href="#">EJB</a></li>
-               <li><a href="#">Jasper Report</a></li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               分类 
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+               <li><a href="#">类型</a></li>
                <li class="divider"></li>
-               <li><a href="#">分离的链接</a></li>
+               <li><a href="#">国家/地区</a></li>
                <li class="divider"></li>
-               <li><a href="#">另一个分离的链接</a></li>
+               <li><a href="#">艺术家</a></li>
+              </ul>
+           </li>
 
+           <li><a href="#about">选电影</a></li>
+           <li><a href="#contact">讨论区</a></li>
 
-            </ul>
-         </li>
           </ul>
+
+          <form class="navbar-form navbar-right" action="test.html" method="post">
+            <div class="form-group">
+              <input type="text" placeholder="邮箱" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="密码" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">登录</button>
+          </form>
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
-      <div class="jumbotron">
+    <div class="head-jumbotron">
+      <div class="container">
         <h1>甜面 TianMian</h1>      
         <p class="lead">甜面，一个业余的电影分享地。</p>
+        <p>
+          <a class="btn btn-primary btn-lg" href="#" role="button"> 去看看 » </a>
+        </p>
+      </div>
+
     </div>
 
-     
+    <div class="container">
+      <div class="article-jumbotron">
+        <h1>诺兰神作：为什么剧透丝毫不会影响观影快感！</h1>  
+        <h2>盗梦空间影评</h2>    
+        <p>  在看这部电影之前看不看剧透都一样，这是一部根本不怕剧透的电影，剧透甚至可以让人在电影院里可以更好的观看影片。可以让你提前对于克里斯托弗诺兰灌输的那套奠基理论更好的接收，诺兰这次玩的依旧是迷局一样的高智商，你别指望看一两遍电影就可以找出这套理论的漏洞。他的伟大之处除了这套理论就是理论背后的充满想象力和创造力的视觉画面。导演强大的细节落实能力，最终成就了无与伦比的刺激效果，在这一切的背后，它的骨子里还是一部间谍片，也难怪有网友形容它就像【碟中谍】版【骇客帝国】。这个比如不是很恰当，应该这么理解，【碟中谍】说的是【奠基】骨子里的内核，【骇客帝国】指的的是高深的盗梦理论，如此看来，这个比如也不是没有道理的。这个间谍故事在动作指导方面趋向007邦德系列，其中不少桥段都是导演诺兰在向自己最爱的邦德电影【女王密使】致敬，在我看来【奠基】更像是一部科幻版的007电影。 </p>
+　　 
+　　<p>  在梦境中时间是以12倍的倍数无限加长的，比如阿里阿德涅第一次和考博来到第一层梦境，阿里阿德涅感觉自己已经和考博谈了一小时，而现实世界里只是5分钟。而第一层梦境很浅是个路人不少的城市，第二层梦境是人相对较少的酒店，第三层梦境是茫茫雪山上的堡垒，第四层梦境是考博自己设计的城市，这个城市像废墟，没有人，第五层迷失域只有前人留下的星星点点的东西，不受任何人控制。而这些剧透理论都对除了可以帮观众区分梦境之外，对于观影快感丝毫不会有影响，因为这些理论在剧情里都是有所影响和体现，而且了变形之后的。在梦境中时间是以12倍的倍数无限加长的，比如阿里阿德涅第一次和考博来到第一层梦境，阿里阿德涅感觉自己已经和考博谈了一小时，而现实世界里只是5分钟。而第一层梦境很浅是个路人不少的城市，第二层梦境是人相对较少的酒店，第三层梦境是茫茫雪山上的堡垒，第四层梦境是考博自己设计的城市，这个城市像废墟，没有人，第五层迷失域只有前人留下的星星点点的东西，不受任何人控制。而这些剧透理论都对除了可以帮观众区分梦境之外，对于观影快感丝毫不会有影响，因为这些理论在剧情里都是有所影响和体现，而且了变形之后的。导演在影片的前半部分就在灌输这套盗梦理论，理论将梦境分为六层，在影片中一开始所谓的现实世界为第一层的话，从第一层到第三层梦境是小女孩艾伦佩吉饰演的阿里阿德涅这位建筑神童设计的，第四层梦境是考博自己设计的，最后一层是迷失域。进入第一层梦境需要服用一般性药物，进入下一层梦境就需要加强型药物。在N曾活动的人可以影响N+1层人，如果想唤醒N层的人就要在第N+1层进行牵引，如果如果在N层电击睡眠的人而在N+1层那个人同时主动牵引，也可以唤醒N+1层活动的人。如果在梦境中死亡就会进入记忆力减弱甚至丧失的迷失域，在迷失域中死亡便会再次回到现实世界。 </p>
+　　 
+　　<p>  在梦境中时间是以12倍的倍数无限加长的，比如阿里阿德涅第一次和考博来到第一层梦境，阿里阿德涅感觉自己已经和考博谈了一小时，而现实世界里只是5分钟。而第一层梦境很浅是个路人不少的城市，第二层梦境是人相对较少的酒店，第三层梦境是茫茫雪山上的堡垒，第四层梦境是考博自己设计的城市，这个城市像废墟，没有人，第五层迷失域只有前人留下的星星点点的东西，不受任何人控制。而这些剧透理论都对除了可以帮观众区分梦境之外，对于观影快感丝毫不会有影响，因为这些理论在剧情里都是有所影响和体现，而且了变形之后的。 </p>
+　　 
+　　<p>  这部影片的视觉效果太棒了，第一层梦境就是【黑暗骑士】里常见的雨中街道的枪战戏，第二层梦境就像【2001太空漫游】的太空失重加上美国歌舞大王弗雷德?阿斯泰尔那种天花板上打斗，第三层梦境就像在【侠影之谜】一开始的茫茫日本雪山上进行一场堡垒攻坚战，第四层梦境就是废墟版的第一层梦境的海边版，第五层迷失域就像超现实主义和印象派的混合体。再加上梦境于梦境之间的相互影响和制约，紧张刺激的枪战场面，凌厉的剪辑，多线条续集，想象力十足的场景，这是剧透无法表达出来的，这就必须观众自己亲自去看。它会时刻让人感觉自己在看的是一部真正的电影！ </p>
+        <p>
+          <!--a class="btn btn-primary btn-lg" href="#" role="button"> 去看看 » </a-->
+        </p>
+      </div>
 
-    </div><!-- /.container -->
+    </div>
+
+
+   
+
+    <div id="slideshow">
+      <img class="active" src="https://lavozenoffdotnet.files.wordpress.com/2013/09/2001.jpg" alt="Slideshow Image 1" />
+      <img src="http://images-cdn.moviepilot.com/image/upload/c_fill,h_1080,w_1920/t_mp_quality/schindlers-list-2nd-june-2013-saw-the-premiere-of-world-war-z-png-72457.png" alt="Slideshow Image 2" />
+      <img src="http://40.media.tumblr.com/80bdc7689457c94e3cb7e3e2556545ad/tumblr_nt10aj7f7a1t7tt05o7_1280.jpg" alt="Slideshow Image 3" />
+      <img src="http://ak-hdl.buzzfed.com/static/2015-08/3/8/enhanced/webdr12/original-6984-1438603389-14.jpg" alt="Slideshow Image 4" />
+      <img src="http://ak-hdl.buzzfed.com/static/2015-08/3/7/enhanced/webdr08/original-26729-1438602891-17.png" alt="Slideshow Image 5" />
+    </div>
+
 
 
     <!-- Bootstrap core JavaScript
